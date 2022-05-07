@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteBase /udemy
+RewriteRule ^blog blog.php [L,NC]
+RewriteRule ^galeri galeri.php [L,NC]
+
