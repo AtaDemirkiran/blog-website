@@ -56,7 +56,7 @@ require_once 'admin/pages/inc-functions.php';
 
                     <div class="post-preview">
                         <img src="<?= $row["image"]  ?>" width="450px" height="300px" alt="">
-                        <a href="urunler_detay.php?id=<?= $row["id"] ?>">
+                        <a href="urun.php?id=<?= $row["id"] ?>">
                             <h2 class="post-title"><?= $row["urun_adi"] ?></h2>
                             <h3 class="post-subtitle"><?= htmlspecialchars_decode($row["urun_detay"]) ?> </h3>
 

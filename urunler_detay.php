@@ -1,23 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php //database baglantı
 require_once 'admin/pages/inc-functions.php';
 
 //detaylarda id ile cekme yapıyoruz.
 //intval sadece sayı değeri alırken kullanılıyor.
-$id = intval($_GET["id"]);
+@$id = intval($_GET["id"]);
 
 $cek = $db->prepare("SELECT * FROM `urunler` WHERE `id` =:id LIMIT 1");
 $cek->bindValue("id", $id, PDO::PARAM_INT);
 $cek->execute();
+
 $row = $cek->fetch(PDO::FETCH_ASSOC);
 
 //aktif degilse direkt olarak url kısmından cekmesin diye
-if ($row["aktif"] == 0) {
+if (@$row["aktif"] == 0) {
     header("Location:index.php");
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
+
 
 <head>
     <meta charset="utf-8" />
